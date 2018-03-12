@@ -1,5 +1,8 @@
 Bok/
 *.zip
 */.idea
+*/*/.idea
 */*/bin
 */*/obj
+*/*/*/obj
+*/*/*/bin
