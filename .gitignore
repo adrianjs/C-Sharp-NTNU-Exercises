@@ -1,0 +1,5 @@
+Bok/
+*.zip
+*/.idea
+*/*/bin
+*/*/obj
