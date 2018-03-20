@@ -1,0 +1,61 @@
+﻿<Window x:Class="Ex7.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ex7"
+        mc:Ignorable="d"
+        MinHeight="350" MinWidth="600"
+        MaxHeight="350" MaxWidth="600"
+        Title="MainWindow" Height="350" Width="600">
+    <Grid Name="Grid" Background="CadetBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Character count: " FontSize="15" Grid.Row="1" FontFamily="Times New Roman" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="White"></TextBlock>
+        <TextBlock Name="TextCharCount" FontSize="15" Text="0" Grid.Column="2" Grid.Row="1" FontFamily="Times New Roman" VerticalAlignment="Center" Foreground="White"></TextBlock>
+        <TextBlock Text="Nothing to show" TextAlignment="Center" FontSize="30" VerticalAlignment="Center" Name="TextView" Foreground="White" Grid.Row="0" Grid.ColumnSpan="4"></TextBlock>
+        <TextBox Background="Aqua" Margin="7" Text=" Enter text here " TextAlignment="Center" VerticalAlignment="Center" Name="TextEdit" Grid.Row="2" Grid.ColumnSpan="4"></TextBox>
+
+        <Button Name="InsertButton" MouseEnter="Button_StyleEnter" MouseLeave="Button_StyleDefault" Content="Insert text" Grid.Row="4" Grid.ColumnSpan="2" Click="InsertButton_Click" Margin="2"></Button>
+        <Button Name="RemoveTextButton" Content="Remove text" Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="2" Click="RemoveTextButton_Click" Margin="2" MouseEnter="RemoveTextButton_MouseEnter" MouseLeave="RemoveTextButton_MouseLeave"></Button>
+
+        <Button Name="ReverseTextButton" Content="Reverse text" Grid.Row="3" Grid.Column="2" Click="ReverseTextButton_Click" Margin="2" MouseEnter="ReverseTextButton_MouseEnter" MouseLeave="ReverseTextButton_MouseLeave"></Button>
+        <Button Name="RemoveCharButton" Content="Remove character" Grid.Row="3" Grid.Column="3" Click="RemoveCharButton_Click" Margin="2" MouseEnter="RemoveCharButton_MouseEnter" MouseLeave="RemoveCharButton_MouseLeave"></Button>
+        <Button Name="BackwardsButton" Content="Turn text backwards" Grid.Row="3" Grid.RowSpan="1" Click="BackwardsButton_Click" Margin="2" MouseEnter="BackwardsButton_MouseEnter" MouseLeave="BackwardsButton_MouseLeave"></Button>
+        <Button Name="CaseButton" Content="lower/UPPER text" Grid.Row="3" Grid.Column="1" Click="CaseButton_Click" Margin="2" MouseEnter="CaseButton_MouseEnter" MouseLeave="CaseButton_MouseLeave"></Button>
+
+        <GroupBox Name="BoldItalicGroup" Grid.Row="5" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="4">
+            <GroupBox.Header>
+                <Label Foreground="White">Font changes</Label>
+            </GroupBox.Header>
+            <StackPanel Background="White">
+                <WrapPanel>
+                    <WrapPanel.Resources>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Margin" Value="10,0" />
+                            <Setter Property="Padding" Value="10,10" />
+                        </Style>
+                    </WrapPanel.Resources>
+                    <Button Content="Italic" Margin="7" Name="ItalicButton" Click="ItalicButton_Click"></Button>
+                    <Button Content="Bold" Margin="7" Name="BoldButton" Click="BoldButton_Click"></Button>
+                    <Button Content="Capital first letter" Margin="7" Name="CapitalLetterButton" Click="CapitalLetterButton_Click"></Button>
+                    <Button Content="Change background color" Margin="7" Name="BGCButton" Click="BGCButton_Click"></Button>
+                </WrapPanel>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>
